@@ -1,0 +1,65 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/guide/guide",
+			"style": {}
+		},
+		{
+			"path": "pages/home/index",
+			"style": {}
+		},{
+			"path": "pages/shopCar/index",
+			"style": {}
+		},{
+			"path": "pages/my/index",
+			"style": {}
+		}
+    ],
+	"easycom": {
+		"ui-(.*)": "@/ui/components/ui-$1/ui-$1.vue",
+		"app-(.*)": "@/app/components/app-$1/app-$1.vue"
+	},
+	"globalStyle": {
+		"mp-alipay": {
+			/* 支付宝小程序特有相关 */
+			"defaultTitle": "",
+			"transparentTitle": "always",
+			"titlePenetrate": "YES",
+			"allowsBounceVertical": "NO"
+		},
+		"app-plus": {
+			/* App特有相关 */
+			"bounce": "none"
+		},
+		// "disableScroll":true,
+		"pageOrientation": "auto",
+		"navigationBarTitleText": "ColoruiAppTemplate",
+		"navigationBarBackgroundColor": "#007AFF",
+		"backgroundColor": "#1b1b1b",
+		"backgroundColorTop": "#1b1b1b",
+		"backgroundColorBottom": "#262626",
+		"navigationStyle": "custom"
+	},
+	"tabBar": {
+		"color": "#aaaaaa",
+		"selectedColor": "#007AFF",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "pages/home/index",
+			"iconPath": "static/tab_icon/document.png",
+			"selectedIconPath": "static/tab_icon/document_cur.png",
+			"text": "首页"
+		},{
+			"pagePath": "pages/shopCar/index",
+			"iconPath": "static/tab_icon/document.png",
+			"selectedIconPath": "static/tab_icon/document_cur.png",
+			"text": "购物车"
+		},{
+			"pagePath": "pages/my/index",
+			"iconPath": "static/tab_icon/document.png",
+			"selectedIconPath": "static/tab_icon/document_cur.png",
+			"text": "我的"
+		}]
+	}
+}
