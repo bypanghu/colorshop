@@ -128,8 +128,8 @@ export default {
 
 				// background-color: #f1f1f1;
 				.ui-tabbar-image {
-					width: 50rpx;
-					height: 50rpx;
+					width: 40rpx;
+					height: 40rpx;
 				}
 
 				&.center {

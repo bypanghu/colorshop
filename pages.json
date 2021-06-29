@@ -14,6 +14,15 @@
 			"path": "pages/my/index",
 			"style": {}
 		}
+        ,{
+            "path" : "pages/home/pages/product/product",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"easycom": {
 		"ui-(.*)": "@/ui/components/ui-$1/ui-$1.vue",
@@ -33,7 +42,7 @@
 		},
 		// "disableScroll":true,
 		"pageOrientation": "auto",
-		"navigationBarTitleText": "ColoruiAppTemplate",
+		"navigationBarTitleText": "colorShop",
 		"navigationBarBackgroundColor": "#007AFF",
 		"backgroundColor": "#1b1b1b",
 		"backgroundColorTop": "#1b1b1b",
@@ -47,18 +56,18 @@
 		"backgroundColor": "#ffffff",
 		"list": [{
 			"pagePath": "pages/home/index",
-			"iconPath": "static/tab_icon/document.png",
-			"selectedIconPath": "static/tab_icon/document_cur.png",
+			"iconPath": "static/tab_icon/home.png",
+			"selectedIconPath": "static/tab_icon/home_cur.png",
 			"text": "首页"
 		},{
 			"pagePath": "pages/shopCar/index",
-			"iconPath": "static/tab_icon/document.png",
-			"selectedIconPath": "static/tab_icon/document_cur.png",
+			"iconPath": "static/tab_icon/car.png",
+			"selectedIconPath": "static/tab_icon/car_cur.png",
 			"text": "购物车"
 		},{
 			"pagePath": "pages/my/index",
-			"iconPath": "static/tab_icon/document.png",
-			"selectedIconPath": "static/tab_icon/document_cur.png",
+			"iconPath": "static/tab_icon/mine.png",
+			"selectedIconPath": "static/tab_icon/mine_cur.png",
 			"text": "我的"
 		}]
 	}

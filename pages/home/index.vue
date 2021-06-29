@@ -36,35 +36,62 @@
 		
 		<!-- 功能区域 -->
 		<block>
-			<scroll-view :scroll-x='true' style="width: 120vw;height: 100%;">
-				<view  class="ui-grid grid-square ui-cols-6 p-3">
-					<view class="ui-item radius " v-for="(item,index) in functionList" :key="index">
-						 <view class="flex-center position-center ">
+			<scroll-view scroll-x="true" >
+				<view class="ui-grid grid-square ui-cols-6 p-3" style="width: 120vw;height: 100%;overflow-x: scroll;">
+					<view class="ui-item radius " v-for="(item,index) in fun_list" :key="index">
+						 <view class="flex-center position-center">
 						 	<view style="text-align: center;">
-								<view :class="[`cicon-home`]"></view>
-								<view class="function_text">{{item}}</view>
+								<image class="function_img" :src="item.img" mode="widthFix"></image>
+								<view class="function_text">{{item.item}}</view>
 							</view>
 						 </view> 
 					</view>
 				</view>
 			</scroll-view>
+			<view class="">
+			</view>
 		</block>
 		<!-- 功能区域结束 -->
 		
+		<!-- 口碑推荐 -->
+		<block>
+			<div class="pl-2">
+				<ui-title class="mt-3" title="口碑推荐" titleColor="text-blue" tpl="center-column" hasDot></ui-title>
+			</div>
+			<view class="goodList">
+				<view class="goodList_left ">
+					<view class="goodList_left_title">爆款鲜花</view>
+					<image class="goodList_left_img" mode="heightFix" src="https://cdn.jsdelivr.net/gh/bypanghu/assests@master/xianhua.jpeg"></image>
+				</view>
+				<view class="goodList_right">
+					<image class="goodList_right_img" mode="heightFix" src="https://cdn.jsdelivr.net/gh/bypanghu/assests@master/goodList_right.jpeg"></image>
+					<image class="goodList_right_img" mode="heightFix" src="https://cdn.jsdelivr.net/gh/bypanghu/assests@master/goodList_right_2.jpeg"></image>
+				</view>
+			</view>
+		</block>
+		<!-- 口碑推荐结束 -->
+		
 		<!-- 套餐区域 -->
 		<block>
-			<div class="pl-2"><ui-title title="精选推荐"  desc="basic"></ui-title></div>
-			<view class="card">
-				
+			<div class="pl-2">
+				<ui-title class="mt-3" title="精选推荐" titleColor="text-blue" tpl="center-column" hasDot></ui-title>
+			</div>
+			<view class="cardList">
+				<shopCardItem :wallList='wallList' @handleClick='handleClick'></shopCardItem>
 			</view>
 		</block>
 		<!-- 套餐区域结束 -->
+	
 	</ui-sys>
 </template>
 
 <script>
+	import shopCardItem from './components/shopcardItem.vue'
 let _this = null;
 export default {
+	components:{
+		shopCardItem	
+	},
 	data() {
 		return {
 			swiperList: [{
@@ -74,13 +101,134 @@ export default {
 			}, {
 				img: "https://oss.color-ui.com/img/qhgtb.png"
 			}],
-			functionList : ['超市','电器','服装','水果','京东到家','生活服务','领京豆','领券','借钱','会员','京东国际','京东生鲜']
+			fun_list : [
+				{
+					item : '超市',
+					img : 'https://cdn.jsdelivr.net/gh/bypanghu/assests@master/colorShop/file.png'
+				},
+				{
+					item : '电器',
+					img : 'https://cdn.jsdelivr.net/gh/bypanghu/assests@master/colorShop/luyin.png'
+				},
+				{
+					item : '服装',
+					img : 'https://cdn.jsdelivr.net/gh/bypanghu/assests@master/colorShop/gift.png'
+				},
+				{
+					item : '水果',
+					img : 'https://cdn.jsdelivr.net/gh/bypanghu/assests@master/colorShop/star.png'
+				},
+				{
+					item : '京东到家',
+					img : 'https://cdn.jsdelivr.net/gh/bypanghu/assests@master/colorShop/location.png'
+				},
+				{
+					item : '生活服务',
+					img : 'https://cdn.jsdelivr.net/gh/bypanghu/assests@master/colorShop/notice.png'
+				},
+				{
+					item : '领京豆',
+					img : 'https://cdn.jsdelivr.net/gh/bypanghu/assests@master/colorShop/list.png'
+				},
+				{
+					item : '领券',
+					img : 'https://cdn.jsdelivr.net/gh/bypanghu/assests@master/colorShop/dangan.png'
+				},
+				{
+					item : '借钱',
+					img : 'https://cdn.jsdelivr.net/gh/bypanghu/assests@master/colorShop/pay.png'
+				},
+				{
+					item : '会员',
+					img : 'https://cdn.jsdelivr.net/gh/bypanghu/assests@master/colorShop/music.png'
+				},
+				{
+					item : '京东国际',
+					img : 'https://cdn.jsdelivr.net/gh/bypanghu/assests@master/colorShop/shenpi.png'
+				},
+				{
+					item : '京东生鲜',
+					img : 'https://cdn.jsdelivr.net/gh/bypanghu/assests@master/colorShop/gift.png'
+				},
+			],
+			wallList :[
+				{
+					img : 'https://oss.color-ui.com/img/dkarj.png',
+					title : 'colorShop',
+					content : 'colorshop一个船新版本的shop，基于colorui3.0的商城模版',
+					lable : '近7天热销好物',
+					nowPrice : 4999,
+					oldPrice : 6000
+				},
+				{
+					img : 'https://cdn.jsdelivr.net/gh/bypanghu/assests@master/47b32f22-e958-4e3c-bd37-1230c483514e.jpeg',
+					title : 'colorShop',
+					content : 'colorshop一个船新版本的shop，基于colorui3.0的商城模版',
+					lable : '近7天热销好物',
+					nowPrice : 4999,
+					oldPrice : 6000
+				},
+				{
+					img : 'https://oss.color-ui.com/img/dkarj.png',
+					title : 'colorShop',
+					content : 'colorshop一个船新版本的shop，基于colorui3.0的商城模版',
+					lable : '降价幅度最大',
+					nowPrice : 4999,
+					oldPrice : 6000
+				},
+				{
+					img : 'https://oss.color-ui.com/img/dkarj.png',
+					title : 'colorShop',
+					content : 'colorshop一个船新版本的shop，基于colorui3.0的商城模版',
+					lable : '近7天热销好物',
+					nowPrice : 4999,
+					oldPrice : 6000
+				},
+				{
+					img : 'https://cdn.jsdelivr.net/gh/bypanghu/assests@master/47b32f22-e958-4e3c-bd37-1230c483514e.jpeg',
+					title : 'colorShop',
+					content : 'colorshop一个船新版本的shop，基于colorui3.0的商城模版',
+					lable : '近7天热销好物',
+					nowPrice : 4999,
+					oldPrice : 6000
+				},
+				{
+					img : 'https://oss.color-ui.com/img/dkarj.png',
+					title : 'colorShop',
+					content : 'colorshop一个船新版本的shop，基于colorui3.0的商城模版',
+					lable : '近7天热销好物',
+					nowPrice : 4999,
+					oldPrice : 6000
+				},
+				{
+					img : 'https://oss.color-ui.com/img/dkarj.png',
+					title : 'colorShop',
+					content : 'colorshop一个船新版本的shop，基于colorui3.0的商城模版',
+					lable : '近7天热销好物',
+					nowPrice : 4999,
+					oldPrice : 6000
+				},
+				{
+					img : 'https://oss.color-ui.com/img/dkarj.png',
+					title : 'colorShop',
+					content : 'colorshop一个船新版本的shop，基于colorui3.0的商城模版',
+					nowPrice : 4999,
+					oldPrice : 6000
+				}
+			]
 		};
 	},
 	onLoad() {
 		_this = this;
 	},
-	methods: {}
+	methods: {
+		handleClick(e){
+			console.log(e)
+			uni.navigateTo({
+				url : '/pages/home/pages/product/product'
+			})
+		}
+	}
 };
 </script>
 
@@ -96,5 +244,58 @@ export default {
 	}
 	.function_text{
 		font-size: 20rpx;
+		color: #555;
+	}
+	.function_img{
+		margin: 0 auto;
+		width: 80rpx;
+		height: 80rpx;
+	}
+	.cardList{
+		background-color: var(--ui-BG-1) !important;
+		min-height: 400rpx;
+	}
+	.goodList{
+		display: flex;
+		align-items: center;
+		
+		overflow: hidden;
+		.goodList_left{
+			width: 60vw;
+			overflow: hidden;
+			padding: 20rpx;
+			border-radius: 10rpx;
+			position: relative;
+			height: 400rpx;
+			.goodList_left_title{
+				width: calc(100%);
+				position: absolute;
+				bottom: 0rpx;
+				z-index: 2;
+				background-image: linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.4), black);
+				max-height: 80rpx;
+				height: 80rpx;
+				color: #fff;
+				line-height: 90rpx;
+				font-size: 32rpx;
+				font-weight: 700;
+				padding-left: 10rpx;
+				border-radius:  10rpx;
+			}
+			.goodList_left_img{
+				width: 100%;
+			}
+		}
+		.goodList_right{
+			width: 40vw;
+			padding: 20rpx;
+			overflow: hidden;
+			height: 400rpx;
+			.goodList_right_img{
+				height: 190rpx;
+				border-radius: 10rpx;
+				width: 100% !important;
+			}
+		}
 	}
 </style>
