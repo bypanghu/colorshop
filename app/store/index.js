@@ -6,7 +6,7 @@ export default {
 		main: 'blue', // 设置默认强调色
 		homePath: '/pages/home/index', // 设置首页路径(一些组件会用到跳回主页，请每个项目设置好！)
 		tabbar: [{
-				title: '购物',
+				title: '首页',
 				icon: '/static/tab_icon/home.png',
 				curIcon: '/static/tab_icon/home_cur.png',
 				url: '/pages/home/index',
@@ -14,8 +14,8 @@ export default {
 			},
 			{
 				title: '购物车',
-				icon: '/static/tab_icon/car.png',
-				curIcon: '/static/tab_icon/car_cur.png',
+				icon: '/static/tab_icon/shopcar.png',
+				curIcon: '/static/tab_icon/shopcar_cur.png',
 				url: '/pages/shopCar/index',
 				type: 'tab'
 			},

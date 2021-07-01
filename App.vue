@@ -23,4 +23,14 @@
 <style lang="scss">
 	/*每个页面公共css */
 	@import '@/ui/scss/ui';
+	.card{
+		margin: 20rpx ;
+		padding: 10rpx;
+		overflow: hidden;
+		width: calc(100vw - 40rpx);
+		border-radius: 10rpx;
+	}
+	
+	
+	
 </style>

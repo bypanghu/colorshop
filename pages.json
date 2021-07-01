@@ -61,8 +61,8 @@
 			"text": "首页"
 		},{
 			"pagePath": "pages/shopCar/index",
-			"iconPath": "static/tab_icon/car.png",
-			"selectedIconPath": "static/tab_icon/car_cur.png",
+			"iconPath": "static/tab_icon/shopcar.png",
+			"selectedIconPath": "static/tab_icon/shopcar_cur.png",
 			"text": "购物车"
 		},{
 			"pagePath": "pages/my/index",

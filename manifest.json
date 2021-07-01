@@ -1,7 +1,7 @@
 {
-    "name" : "ColoruiApp",
+    "name" : "colorshop",
     "appid" : "__UNI__E4EF39A",
-    "description" : "",
+    "description" : "基于colorui3.0的shop模版",
     "versionName" : "1.0.0",
     "versionCode" : "100",
     "transformPx" : false,
