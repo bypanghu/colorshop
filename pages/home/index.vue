@@ -10,7 +10,7 @@
 					<view class="p-2 bg-blur-1 w-100 round border flex-center" :style="{height:`35px`}">
 						<text class="uicon-search-line mx-2"></text>
 						<view class="text-c text-sm">
-							搜索商品123
+							搜索商品
 						</view>
 					</view>
 				</view>
