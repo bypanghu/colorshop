@@ -21,30 +21,15 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-#       - name: 自动刷新gitee.
-#         uses: actionhub/gitee-pages@ee132af470499845c20bb64bc107c6dafc00713d
-#         with:
-#           # 用户名
-#           username: "bypanghu"
-#           # 密码
-#           password: "bypanghu@163.com"
-#           # 仓库网址
-#           repository: "https://gitee.com/bypanghu/colorshop"
-#           # 部署分支
-#           branch:  master
-#           # 部署目录
-#           directory: ''
-#           # 开启https
-#           https: false
       - name: Sync Github Repos To Gitee  # 名字随便起
         uses: Yikun/hub-mirror-action@v1.1  # 使用Yikun/hub-mirror-action
         with:
           src: github/colorshop  # 源端账户名(github)
           dst: gitee/colorshop  # 目的端账户名(gitee)
-          dst_key:  ssh-rsa MIIBCgKCAQEAyRUe402I4CHi808Rc0YvptE7LQdL0R5hUyphjF/NK9D4EnFnQvYgLtmOQzL8Tt91AvcToeClRxrWy2pkdK7PkyDhBj0cQi2VI4KAinVAmZ9HiUdhCK745K4xss6rxT0hOVHRCHuywNWvuDqom2yYUTG/Y6fhjcOiKtE+WWVx5sobKBTZrdm/u6eipOWKxkcH3yYmFzL4J2zLZohqL6t6p8LDycnZLxDmNQOW9eLwxu2GEDIBPVgNm3YxVaU6bQMhwJQEcKb3TfTwKsCo15DGLNUdQWX+1GXhGEZT6cUe0k7uIQ1Etv56W1E7XMe8STbj3Tdwt2yK+sseU74eqBqgZQIDAQAB
+          dst_key: MIIBCgKCAQEAyRUe402I4CHi808Rc0YvptE7LQdL0R5hUyphjF/NK9D4EnFnQvYgLtmOQzL8Tt91AvcToeClRxrWy2pkdK7PkyDhBj0cQi2VI4KAinVAmZ9HiUdhCK745K4xss6rxT0hOVHRCHuywNWvuDqom2yYUTG/Y6fhjcOiKtE+WWVx5sobKBTZrdm/u6eipOWKxkcH3yYmFzL4J2zLZohqL6t6p8LDycnZLxDmNQOW9eLwxu2GEDIBPVgNm3YxVaU6bQMhwJQEcKb3TfTwKsCo15DGLNUdQWX+1GXhGEZT6cUe0k7uIQ1Etv56W1E7XMe8STbj3Tdwt2yK+sseU74eqBqgZQIDAQAB
           dst_token: 38baa65844abace27da68ce8e2e40ac5
           account_type: user  # 账户类型
-          clone_style: "https"  # 使用https方式进行clone，也可以使用ssh
+          clone_style: "ssh"  # 使用https方式进行clone，也可以使用ssh
           debug: true  # 启用后会显示所有执行命令
           force_update: true  # 启用后，强制同步，即强制覆盖目的端仓库
           static_list: ""  # 静态同步列表，在此填写需要同步的仓库名称，可填写多个
