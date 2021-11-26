@@ -42,7 +42,7 @@ jobs:
           # 用户名
           username: "bypanghu"
           # 密码
-          password: "tzh19980212+"
+          password: "bypanghu@163.com"
           # 仓库网址
           repository: "https://gitee.com/bypanghu/colorshop"
           # 部署分支
